@@ -18,7 +18,7 @@ function Profile() {
             <div className={styles.thumbnail}>
                 <img
                     className={styles.image}
-                    src="src/images/putin.webp"
+                    src="https://images.unsplash.com/photo-1566070294271-0cb77eb47f6e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGdlbnRsZW1lbnxlbnwwfHwwfHx8MA%3D%3D"
                     alt="putin"
                 />
             </div>
