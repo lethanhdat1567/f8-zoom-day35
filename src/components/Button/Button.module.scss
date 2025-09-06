@@ -1,0 +1,69 @@
+.wrapper {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    background-color: transparent;
+    color: #08cb00;
+    min-width: 150px;
+    cursor: pointer;
+    transition: ease 0.4s;
+    line-height: 20px;
+
+    &:hover {
+        border: 1px solid #6c6b6b;
+        opacity: 0.8;
+    }
+
+    &.loading {
+        .content {
+            visibility: hidden;
+        }
+    }
+}
+
+.primary {
+    color: #fff;
+    background: #579c03;
+}
+
+.rounded {
+    border-radius: 999px;
+}
+
+.bordered {
+    color: #579c03;
+    border-color: currentColor;
+}
+
+// Sizes
+.small {
+    padding: 4px 12px;
+    font-size: 1.4rem;
+}
+
+.medium {
+    padding: 8px 16px;
+}
+
+.large {
+    padding: 12px 20px;
+    font-size: 1.8rem;
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: default;
+    &:hover {
+        opacity: 0.5;
+        border: 1px solid #ccc;
+    }
+}
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
