@@ -16,17 +16,22 @@ function Navigation() {
     return (
         <div className={styles.wrapper}>
             <nav className={styles.nav}>
-                {navItems.map((item) => (
-                    <NavLink
-                        key={item.to}
-                        to={item.to}
-                        className={({ isActive }) =>
-                            `${styles.item} ${isActive ? styles.active : ""}`
-                        }
-                    >
-                        {item.title}
-                    </NavLink>
-                ))}
+                <ul className={styles.navList}>
+                    {navItems.map((item) => (
+                        <li key={item.to} className={styles.navItem}>
+                            <NavLink
+                                to={item.to}
+                                className={({ isActive }) =>
+                                    `${styles.item} ${
+                                        isActive ? styles.active : ""
+                                    }`
+                                }
+                            >
+                                {item.title}
+                            </NavLink>
+                        </li>
+                    ))}
+                </ul>
             </nav>
         </div>
     );

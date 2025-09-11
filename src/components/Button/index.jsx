@@ -18,22 +18,36 @@ function Button({
     onClick,
     ...passProps
 }) {
+    const isDisabled = disabled || loading;
+
     const classNames = clsx(styles.wrapper, className, styles[size], {
         [styles.primary]: primary,
         [styles.rounded]: rounded,
         [styles.bordered]: bordered,
-        [styles.disabled]: disabled,
+        [styles.disabled]: isDisabled,
         [styles.loading]: loading,
     });
+
+    const handleClick = (e) => {
+        if (isDisabled) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+        }
+        onClick?.(e);
+    };
 
     const Component = href ? "a" : "button";
 
     return (
         <Component
             {...passProps}
-            href={href}
-            className={clsx(classNames)}
-            onClick={disabled || loading ? undefined : onClick}
+            href={isDisabled && href ? undefined : href}
+            className={classNames}
+            onClick={handleClick}
+            disabled={Component === "button" ? isDisabled : undefined}
+            tabIndex={isDisabled ? -1 : undefined}
+            aria-disabled={isDisabled}
         >
             <div className={styles.content}>{children}</div>
             {loading && (
